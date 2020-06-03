@@ -1,13 +1,54 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+         
+    }
+    
+    .head_text {
+        color: white;
+    }
+    
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+        padding : 15px;
+    }
+        
+</style>
+
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 left">
             {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.published_date}} </p>
+                    <p class="card-text">{{post.text|slice:":200" }}</p>
+                    <p><a href="{% url 'post_detail' pk=post.pk%}" class="btn btn-primary">Read More &rarr;</a>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a></p>
+                                   
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+            <!--{% for post in posts %}
                 <div class="post">
                     <div class="date">
                         <p>published: {{ post.published_date }}</p>
                     </div>
                     <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                    <p>{{ post.text|linebreaksbr }}</p>
+                    <p>{{ post.text|truncatechars:300|linebreaksbr }}</p>
                     <h5>Created By: {{ post.author }}</h5>
                 </div>
-            {% endfor %}
+            {% endfor %} -->
 {% endblock %}           
+

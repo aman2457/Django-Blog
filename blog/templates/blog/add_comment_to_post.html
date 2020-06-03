@@ -1,0 +1,70 @@
+{% extends 'blog/base.html' %}
+{%load static%}
+{% block content %}
+<style>
+body {
+     
+     width : 100%;
+     margin-left : 0px;
+     height:100%;
+     background: url('/static/assets/new.jpg');  
+     background-size : 100%;   
+    
+}
+
+.form-group {
+    <!--background-image: linear-gradient( 109.6deg,  rgba(101,58,150,1) 29.9%, rgba(168,141,194,1) 99.9% );
+     background-repeat: no-repeat;
+     background-size :100%;-->
+    padding : 20px;
+    background: url('/static/assets/form.jpg');  
+    background-size : 100%; 
+    margin-top : 75px;
+    color:black;
+    box-shadow:         20px 20px 50px 15px grey;
+    
+}
+
+.form-group h1{
+    text-align :center;
+    margin-bottom : 5px;
+    padding:5px;
+}
+
+.form-group .save {
+    margin-left : 50px;
+}
+
+
+
+</style>
+
+<div class="container">
+ <div class="row justify-content-center">
+  <div class="form-group col-md-4 col-md-offset-5 align-center">
+  <div class="comment">
+    <h1>New comment</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-danger">Post Comment</button>
+    </form>
+    </div>  
+    </div>
+    </div>
+
+{% endblock content %}
+<!--
+    <div class="container">
+ <div class="row justify-content-center">
+  <div class="form-group col-md-4 col-md-offset-5 align-center">
+  <div class="comment">
+    <h1>New comment</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Send</button>
+    </form>
+    </div>  
+    </div>
+    </div>
+ </div> 
+-->

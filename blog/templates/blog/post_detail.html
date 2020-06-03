@@ -1,19 +1,84 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-    <div class="post">
-        {% if post.published_date %}
-    <div class="date">
-        {{ post.published_date }}
-        </div>
-    {% else %}
-    <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
-{% endif %}
+<style>
+.card-body{
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  padding : 20px;
+  margin:10px;
+  
+  
+}
+.shadow a{
+    padding:10px;
+    margin : 10px;
+}
+.text-muted {
+   font-size:18px;
+}
+.card-text{
+    font-size:22px;
+}
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+.add-comment{
+  margin : 20px;
+  padding : 10px;
+
+}
+
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 card mb-4 mt-3 left top">
+      <div class="card-body">
+        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
         {% if user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-        {% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-        <h5>Created By: {{ post.author }}</h5>
+        {%if user.id == post.author.id%} 
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
+        <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span>Delete</a>
+       {%endif%}
+        {%endif%}
+        <div class= "shadow p-3 mb-5 bg-white rounded">
+        <p class=" text-muted">{{ post.author }} |
+        {% if post.published_date %} {{ post.published_date }}
+        {% else %}
+        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-floppy-saved"></span>Publish</a>
+        {%endif%}
+        <p class="card-text ">{{ post.text | safe }}</p>
+        </div>
+      </div>
     </div>
-{% endblock %}
+    
+  </div>
+</div>
+<div class= "add-comment">
+<h4>Found It Interesting </h4>
+<a class="btn btn-danger" href="{% url 'add_comment_to_post' pk=post.pk %}"><span class="glyphicon glyphicon-comment"></span>Add Comment (:</a>
+</div>
+<hr>
+{% for comment in post.comments.all %}
+    <div class="comment">
+    {% if user.is_authenticated or comment.approved_comment %}
+        <div class="date">{{ comment.created_date }}
+        {% if not comment.approved_comment %}
+        {%if user.id == post.author.id%} 
+        <a class="btn btn-warning" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span>Remove It.</a>
+        <a class="btn btn-success" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span>Approve (:</a>
+        {% endif %}
+        {% endif %}
+        </div>
+        
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaks }}</p>
+    </div>
+    {% endif %}
+{% empty %}
+    <p>No comments here yet :(</p>
+{% endfor %}
+
+{% endblock content %}
+
+
