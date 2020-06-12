@@ -19,9 +19,9 @@ class Post(models.Model):
         return self.comments.filter(approved_comment=True)        
 
 class Comment(models.Model):
-    post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(verbose_name ='Username',max_length=200)
-    text = models.TextField()
+    text = models.TextField(verbose_name ='Comment')
     email = models.EmailField(default='')
     created_date = models.DateTimeField(default=timezone.now)
     approved_comment = models.BooleanField(default=False)

@@ -5,14 +5,54 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
+    <nav class="navbar navbar-light" style="background-color: #000000" >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+           <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+      
+      </button>
+      <a class="navbar-brand" href="{% url 'post_list' %}">आपन बिहार</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    {% if user.is_authenticated %}
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="{% url 'post_list' %}">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'post_new' %}">New Blog</a></li>
+        <li><a href="{% url 'post_draft_list' %}">Draft Blog</a></li>
+        <li><a href="{% url 'post_list' %}">Blogs</a></li>    
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+     <li><p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}?next=/">Log out</a>)</small></p>
+    </ul>
+     {% else %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'post_list'  %}"><span class="glyphicon glyphicon-eye-open"></span> Hello Guest</a></li>
+        <li><a href="{% url 'signup'  %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="{% url 'login'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+        </li>
+      </ul>
+      {% endif %}
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
     
-        <nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
+    <!--    <nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
             <div class="container-fluid">
                 <div class="navbar-header">
              <a class="navbar-brand" href="/">Beauty Of Bihar</a>
@@ -35,22 +75,9 @@
                     <li><a href="{% url 'login'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                     {% endif %}
-       <!-- {% if user.is_authenticated %}
-         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-         <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-         <p class="top-menu">Hello{{ user.username }} <small>(<a href="{% url 'logout' %}?next=/">Log out</a>)</small></p>
-         {% else %}
-        <p class="top-menu">Hello Guest
-        <small><a href="{% url 'signup'  %}" class="btn btn-info" >Signup</a></small>
-        <small><a href="{% url 'login'  %}" class="btn btn-info" >Login</a></small>
-        </p>
-         {% endif %}
-         
-        <h1><a href="/">Beauty Of Bihar</a></h1>
-        -->
         </div>
         </nav>
-    </div>
+    </div>-->
    
     <div class="content container">
         <div class="row">
@@ -60,5 +87,12 @@
             </div>
         </div>
     </div>
+    <!-- Footer -->
+   <footer id="footer" class="container-fluid" style="background-color:black">
+    <p class="text-center" style="color:white; margint-top : 10px;font-size:20px;">Made with <i class="fa fa-heart" style="font-size:20px;color:red"></i>
+    by Aman <i class="fa fa-smile-o" style="font-size:21px;color:pink"></i>
+</p>
+    <p class="text-center" style="color:white; font-size:20px;">Copyright Aapan Bihar 2020</p>
+  </footer>
 </body>
 </html>
