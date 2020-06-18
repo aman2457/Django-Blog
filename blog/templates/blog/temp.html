@@ -77,6 +77,33 @@
 </nav>
 
 
+    
+    <!--    <nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
+            <div class="container-fluid">
+                <div class="navbar-header">
+             <a class="navbar-brand" href="/">Beauty Of Bihar</a>
+                </div>
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'post_list' %}">Home</a></li>
+                    <li><a href="{% url 'post_new' %}">New Blog</a></li>
+                    <li><a href="{% url 'post_draft_list' %}">Draft Blog</a></li>
+                    <li><a href="{% url 'post_list' %}">Blogs</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+               <li><p class="top-menu">Hello Dear,{{ user.username }} <small>(<a href="{% url 'logout' %}?next=/">Log out</a>)</small></p>
+                </ul>
+                {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                
+                    <li><a href="{% url 'post_list'  %}"><span class="glyphicon glyphicon-eye-open"></span> Hello Guest</a></li>
+                    <li><a href="{% url 'signup'  %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{% url 'login'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                    {% endif %}
+        </div>
+        </nav>
+    </div>-->
 
 
 

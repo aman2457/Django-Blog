@@ -1,9 +1,50 @@
 {% extends 'blog/base.html' %}
-
+{%load static%}
 {% block content %}
-    <h2>New post</h2>
+<style>
+.card-body{
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+  padding : 20px;
+  margin:10px; 
+  width:auto;
+  height : auto; 
+  margin-left : 2%;
+
+}
+
+
+#id_text,#id_title {
+    width:100%;
+    
+}
+
+.row{
+    height : 95%;
+}
+
+.post-form {
+    margin-left : 25px;
+}
+
+</style>
+ <!-- <div class="col-xs-9">
+        <img src="{% static 'assets/write.png' %}" style="width: auto; height: 100%;" class="img-fluid pull-right" alt="...">
+    </div>-->
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-9 card mb-4 mt-3 left top">
+      <div class="card-body">
+    <h1 class="text-center">New post</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-primary">Save</button>
     </form>
+
+    </div>
+    </div>
+    </div>
+    </div>
 {% endblock %}
