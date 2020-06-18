@@ -25,19 +25,15 @@
 
 body {
        background-image: url( "{% static 'assets/login.jpg' %}");    
-       height: 100%;
+       height: auto;
+      background-repeat : no-repeat;   
+
        
 }
 
 .form-group h2 {
   margin-bottom : 20px;
 }
-
-.row {
-    
-    height : 80%;
-}
-
 .error-message {
     color : red;
     margin-left : 35px;
@@ -45,6 +41,11 @@ body {
 
 .errorlist {
     color : red;
+}
+
+.content {
+    
+        height : 78%;
 }
 
 label {
@@ -64,7 +65,7 @@ ul{
 }
 
 </style>
-<div class = "conatainer">
+
   <div class="row justify-content-center">
   
   <div class="form-group col-md-7 col-md-offset-7 align-center">
@@ -76,5 +77,5 @@ ul{
   </form>
   </div>
   </div>
-  </div>
+
 {% endblock %}

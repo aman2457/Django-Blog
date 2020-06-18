@@ -31,12 +31,15 @@ p{
 }
 
 body {
-       background-image: url( "{% static 'assets/login.jpg' %}");     
+
+       background-image: url( "{% static 'assets/login.jpg' %}") ;  
+       background-repeat : no-repeat;   
+       height : auto;
 }
 
-.row {
+.content {
     
-    height : 80%;
+        height : 78%;
 }
 
 .error-message {
@@ -59,9 +62,8 @@ label {
 </style>
 
 
-<div class = "conatainer">
+
   <div class="row justify-content-center">
-  
   <div class="form-group col-md-6 col-md-offset-8 align-center">
     <h1 class ="text-center">Login</h1> 
     {% if form.errors %}
@@ -81,6 +83,6 @@ label {
  
   </div>  
     </div>
-  </div>
+ 
   
 {% endblock %}
