@@ -4,7 +4,7 @@
 
 .row{
     margin-right: -20px;
-    margin-left: -40px;
+margin-left: -40px;
 }
 
 
@@ -28,10 +28,9 @@
     font-size:18px;
 }
 .comment {
-        margin: 20px 20px 00px 10px;
+    margin: 20px 20px 00px 10px;
         box-shadow: 7px 5px 7px 3px gray;
         padding: 10px;
-}
 }
 
 .form-group h1{
@@ -55,9 +54,10 @@
     box-shadow:         20px 20px 50px 15px grey;
     margin-left : 35px;
     margin-right : 25px;
-    margin-bottom : auto;   
+    margin-bottom : auto;
+    
+    
 }
-
 
 #id_author,#id_email,#id_text {
     width : 100%;
@@ -70,8 +70,7 @@
 }
 
 .form-group .save {
-    margin: 0 0 10 0px;
-   
+    margin-left : 50px;
 }
 </style>
 <div class="container">
@@ -111,7 +110,6 @@
         {% endif %}
         {% endif %}
         
-    
         <strong>{{ comment.author }} | {{ comment.created_date }}</strong>
         <p>{{ comment.text|linebreaks }}</p>
      
@@ -121,7 +119,6 @@
 {% empty %}
     <p>No comments here yet :(</p>
 {% endfor %}
-{% if user.is_authenticated %}
  <div class="row justify-content-left">
   <div class="form-group col-md-7 col-md-offset-5 align-left">
   <div class="comment-form">
@@ -135,5 +132,4 @@
     </div>
     </div>
   
-{%endif%}
 {% endblock content %}

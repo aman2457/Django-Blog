@@ -15,12 +15,13 @@ class Post(models.Model):
     def publish(self):
             self.published_date = timezone.now()
             self.save()
+    
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)        
 
 class Comment(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
-    author = models.CharField(verbose_name ='Name',max_length=200)
+    author = models.CharField(verbose_name ='Your Name(Not Username)',max_length=200)
     text = models.TextField(verbose_name ='Comment')
     email = models.EmailField(default='')
     created_date = models.DateTimeField(default=timezone.now)
