@@ -6,9 +6,9 @@
 
 
 .form-group{
-    padding : 5px;
+     padding : 10px;
     height : auto;  
-    margin-right : 10%;
+    margin-right : auto;
     margin-top : 15%;
     -moz-box-shadow:    3px 3px 5px 6px #ccc;
     -webkit-box-shadow: 3px 3px 5px 6px #ccc;
@@ -18,15 +18,15 @@
     background-image: url( "{% static 'assets/loginp.png' %}");
     */    
      background-color :white;
-         position: relative;
+    position: relative;
 
 }
 
 .login-form {
-    margin-left : 25px;
+    margin : 20 20 20 20px;
 }
 
-p{
+.form-group p{
 
    margin: 0 0 18px;
 
@@ -42,10 +42,7 @@ body {
   min-height: 100vh;
 }
 
-.content {
-    
-        height : 78%;
-}
+
 
 .error-message {
     color : red;
@@ -77,9 +74,10 @@ label {
 </style>
 
 
+<div class='container-fluid'>
 
   <div class="row justify-content-center">
-  <div class="form-group col-md-6 col-md-offset-8 align-center">
+  <div class="form-group col-md-7 col-md-offset-7 align-center">
     <h1 class ="text-center">Login</h1> 
     {% if form.errors %}
         <p class='error-message'>Your username and password didn't match. Please try again.</p>
@@ -98,6 +96,6 @@ label {
  
   </div>  
     </div>
- 
+ </div>
   
 {% endblock %}
