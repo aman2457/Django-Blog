@@ -2,24 +2,42 @@
 {%load static%}
 {% block content %}
 <style>
+
+
 body{
-  display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-image: url( "{% static 'assets/login.jpg' %}") ;  
+       background-repeat : no-repeat;   
+
 }
+
+.content {
+    margin-left: 0px;
+}
+
+.row{
+  
+    margin-right: -10%;
+    margin-left: -15px;
+}
+
 
 .card-body{
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
-  padding : 20px;
+
+  padding : 10px;
   margin:10px; 
   width:auto;
-  height : auto; 
-  margin-left : 2%;
+  height : auto;
+  color : white; 
+ 
 
 }
 
+.post-form p{
+  font-size: 17px;
+}
 
 #id_text,#id_title {
     width:100%;
@@ -31,30 +49,41 @@ body{
 }
 
 .post-form {
-    margin-left : 25px;
+    margin-left : 0px;
 }
+
+.card-body .text-center{
+  font-weight : bold;
+  
+}
+
 #footer {
     font-size: 28px;
     margin-top: auto;
     background-color: black;
     width: 100%;
     margin-top: auto;
-
-
 }
+
+
 
 
 </style>
  <!-- <div class="col-xs-9">
+     <div class="col-md-9 card mb-4 mt-3 left top">
+
         <img src="{% static 'assets/write.png' %}" style="width: auto; height: 100%;" class="img-fluid pull-right" alt="...">
     </div>-->
 
-  <div class="row">
+    <div class="container mt-5 mb-5">
+      <div class="row">
 
-    <div class="col-md-9 card mb-4 mt-3 left top">
       <div class="card-body">
-    <h1 class="text-center">New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
+          <h1 class="text-center">Write Your Blog <i class="fa fa-heart" style="font-size:28px;color:red"></i></h1>
+
+    <form method="POST" class="post-form">
+    {% csrf_token %}
+      {{form.media}}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-primary">Save</button>
     </form>
@@ -62,5 +91,5 @@ body{
     </div>
     </div>
     </div>
-    </div>
+   
 {% endblock %}
