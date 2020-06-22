@@ -5,6 +5,7 @@
         font-family: "Roboto", sans-serif;
         font-size: 18px;
         background-color: #fdfdfd;
+        min-height: 100vh;
          
     }
     
@@ -27,7 +28,7 @@
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
-            {% for post in posts %}
+            {% for post in post_lists %}
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title | safe }}</a></h2>
@@ -41,22 +42,22 @@
                 </div>
             </div>
             {% endfor %}
+            {% if post_lists.has_other_pages %}
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-end">
+    {% if post_lists.has_previous %}
+    <li><a href="?page={{ post_lists.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if post_lists.has_next %}
+    <li><a href="?page={{ post_lists.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+   {% endif %}
+  </ul>
+  </nav>
+</div>
+{% endif %}
         </div>
     </div>
 </div>
-
-
-
-
-            <!--{% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <p>published: {{ post.published_date }}</p>
-                    </div>
-                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                    <p>{{ post.text|truncatechars:300|linebreaksbr }}</p>
-                    <h5>Created By: {{ post.author }}</h5>
-                </div>
-            {% endfor %} -->
+ 
 {% endblock %}           
 
