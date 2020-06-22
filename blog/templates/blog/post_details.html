@@ -78,7 +78,7 @@
   <div class="row">
     <div class="col-md-9 card mb-4 mt-3 left top">
       <div class="card-body">
-        <h1>{% block title %} {{ post.title }} {% endblock title %}</h1>
+        <h1>{% block title %} {{ post.title | safe }} {% endblock title %}</h1>
         {% if user.is_authenticated %}
         {%if user.id == post.author.id%} 
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
