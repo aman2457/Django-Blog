@@ -14,9 +14,10 @@
 .card-body{
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
+    box-shadow: 0 16px 48px #000000;
   padding : 20px;
   margin:10px;
+  background-color:white;
   
   
 }
@@ -31,8 +32,10 @@
     font-size:18px;
 }
 .comment {
-    margin: 20px 20px 00px 20px;
-        box-shadow: 7px 5px 7px 3px gray;
+        
+        background-color:white;
+        margin: 20px 20px 00px 20px;
+        box-shadow: 0 16px 48px #000000;
         padding: 10px;
 }
 
@@ -53,7 +56,7 @@
     background-size : 100%; 
     margin-top : 75px;
     color:black;
-    box-shadow:         20px 20px 50px 15px grey;
+    box-shadow:         20px 20px 50px 15px #000000;
     margin-left : 35px;
     margin-right : 25px;
     margin-bottom : auto;
@@ -119,7 +122,9 @@
 
     {% endif %}
 {% empty %}
+    <div class="comment" style="margin-right: 1%;margin-left: 4%;">
     <p>No comments here yet :(</p>
+    </div>
 {% endfor %}
  <div class="row justify-content-left" style="margin-right: -3%;margin-left: -1%;">
   <div class="form-group col-md-7 col-md-offset-5 align-left" >

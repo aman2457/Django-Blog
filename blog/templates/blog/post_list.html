@@ -1,10 +1,10 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <style>
+
     body {
         font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
+        font-size: 18px;      
         min-height: 100vh;
          
     }
@@ -14,15 +14,17 @@
     }
     
     .card {
-        box-shadow: 0 16px 48px #E3E7EB;
+        box-shadow: 0 16px 48px #000000;
         padding : 15px;
-        margin-bottom : 40px;
+        margin-bottom : 15px;
+        background-color: white;
     }
  .row{
      margin-right: -20px;
     margin-left: -40px;
  }           
 </style>
+
 
 <div class="container">
     <div class="row">
@@ -44,7 +46,7 @@
             {% endfor %}
             {% if post_lists.has_other_pages %}
   <nav aria-label="Page navigation conatiner"></nav>
-  <ul class="pagination justify-content-end">
+  <ul class="pagination justify-content-end" style="box-shadow: 0 16px 48px #000000;">
     {% if post_lists.has_previous %}
     <li><a href="?page={{ post_lists.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
     {% endif %}
@@ -58,6 +60,7 @@
         </div>
     </div>
 </div>
+
  
 {% endblock %}           
 
