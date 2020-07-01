@@ -53,35 +53,7 @@ section {
     }
 }
 
-/*
-@-webkit-keyframes animation {
-    0% {
-        background-position: 0% 88%
-    }
 
-    50% {
-        background-position: 100% 13%
-    }
-
-    100% {
-        background-position: 0% 88%
-    }
-}
-
-@keyframes animation {
-    0% {
-        background-position: 0% 88%
-    }
-
-    50% {
-        background-position: 100% 13%
-    }
-
-    100% {
-        background-position: 0% 88%
-    }
-}
-*/
 .navbar {
     color: white;
     padding: 10px;
