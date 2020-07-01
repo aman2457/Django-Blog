@@ -10,6 +10,7 @@ class Post(models.Model):
     text = models.TextField(verbose_name ="Blog Content",)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    post_views=models.IntegerField(default=0)
     def __str__(self):
             return self.title
     def publish(self):

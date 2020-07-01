@@ -1,11 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <style>
-
-
-
-
-
 .content {
     margin-left: -25px;
     
@@ -78,6 +73,8 @@
     margin-left : 50px;
 }
 </style>
+
+
 <div class="container">
   <div class="row">
     <div class="col-md-9 card mb-4 mt-3 left top" style="margin-right: -4%;">
@@ -91,15 +88,16 @@
         {%endif%}
         <div class= "shadow p-3 mb-5 bg-white rounded">
         <p class=" text-muted">{{ post.author }} |
-        {% if post.published_date %} {{ post.published_date }}
+        {% if post.published_date %} {{ post.published_date }} | ({{post.post_views}} Views)</p>
         {% else %}
-        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-floppy-saved"></span>Publish</a>
+        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-floppy-saved"></span>Publish</a> 
         {%endif%}
         <p class="card-text ">{{ post.text | safe }}</p>
         </div>
       </div>
+<div class="sharethis-inline-share-buttons"></div>
     </div>
-    
+
   </div>
 </div>
 

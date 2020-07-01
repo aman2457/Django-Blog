@@ -27,6 +27,8 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    post.post_views += 1
+    post.save()
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
