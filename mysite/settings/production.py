@@ -1,6 +1,6 @@
 from mysite.settings.common import *
 import dj_database_url
-from decouple import config,csv
+from decouple import config,Csv
 
 #SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',)
 
