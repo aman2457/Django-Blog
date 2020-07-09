@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #DEBUG = False
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+
 
 
 # Application definition
@@ -144,20 +144,5 @@ SUMMERNOTE_CONFIG = {
 }
 
 SUMMERNOTE_THEME = 'bs4'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-'''EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend
-wnahpnnvfqgiurss
-
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'dgabihar@gmail.com'
-'''
-
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'dgabihar@gmail.com'
-EMAIL_HOST_PASSWORD = 'wnahpnnvfqgiurss'
-EMAIL_PORT = 587
