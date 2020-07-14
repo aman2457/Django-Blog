@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'django_summernote',
     'django.contrib.admin',
+  
 
     
 ]
@@ -144,5 +145,5 @@ SUMMERNOTE_CONFIG = {
 }
 
 SUMMERNOTE_THEME = 'bs4'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

@@ -72,6 +72,36 @@
 .form-group .save {
     margin-left : 50px;
 }
+
+.alert {
+    font-size: 18px;
+}
+
+.likefx .like {
+    border-radius: 10px;    
+    border-color: #428bca;
+    border-width: 5px;
+
+}
+
+.likefx .dislike {
+    border-radius: 10px;    
+    border-width: 5px;
+    background-color: #428bca;
+    color :white;
+
+}
+
+.btn-danger{
+    font:size:40px;
+
+}
+
+.card-body a{
+    font-size:18px;
+}
+
+
 </style>
 
 
@@ -82,18 +112,33 @@
         <h1>{% block title %} {{ post.title | safe }} {% endblock title %}</h1>
         {% if user.is_authenticated %}
         {%if user.id == post.author.id%} 
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>Edit</a>
-        <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span>Delete</a>
+        <a class="btn btn-info" href="{% url 'post_edit' pk=post.pk %}"><i class="fa fa-pencil-square-o" style="font-size:22px;"></i>&nbsp;Edit</a>
+        &emsp;<a class="btn btn-danger" href="{% url 'post_remove' pk=post.pk %}"><i class="fa fa-trash-o" style="font-size:22px;"></i>&nbsp;Delete</a>
        {%endif%}
         {%endif%}
         <div class= "shadow p-3 mb-5 bg-white rounded">
-        <p class=" text-muted">{{ post.author }} |
-        {% if post.published_date %} {{ post.published_date }} | ({{post.post_views}} Views)</p>
+        <p class=" text-muted">||{{ post.author }}||
+        {% if post.published_date %} 
+        {{ post.published_date }}||({{post.post_views}} Views)|| ({{total_likes }} Like{{total_likes | pluralize}} )</p>
         {% else %}
         <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-floppy-saved"></span>Publish</a> 
         {%endif%}
         <p class="card-text ">{{ post.text | safe }}</p>
         </div>
+        <div class="likefx conatiner">
+        {% if request.user.is_authenticated %}
+        <form action="{% url 'like_post' %}" method="post">
+            {% csrf_token %}
+            {% if is_liked%}
+         <button type="submit" name="post_id" value="{{ post.id }}" class="dislike btn btn-link"><i class="fa fa-heart" style="font-size:18px;color:red"></i> Dislike</button> 
+         {% else %}
+         <button type="submit" name="post_id" value="{{ post.id }}" class="like btn btn-link"><i class="fa fa-heart-o" style="font-size:18px;color:red"></i>&nbsp;&nbsp;Like&nbsp;</button> 
+         {% endif %}  
+         </form> 
+         {% else %}
+         <p class="alert alert-info"><i class="fa fa-heart" style="font-size:18px;color:red"></i>&nbsp;   Loved the post. <a href="{% url 'login' %}"> Login or Signup</a> to Like the post</span></p>
+         {% endif %}
+      </div>
       </div>
 <div class="sharethis-inline-share-buttons"></div>
     </div>
@@ -106,14 +151,12 @@
     <div class="comment" style="margin-right: 1%;margin-left: 4%;">
     {% if user.is_authenticated or comment.approved_comment %}
         
-        {% if not comment.approved_comment %}
-        {%if user.id == post.author.id%} 
-        <a class="btn btn-warning" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span>Remove It.</a>
-        <a class="btn btn-success" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span>Approve (:</a>
-        {% endif %}
-        {% endif %}
+        
         
         <strong>{{ comment.author }} | {{ comment.created_date }}</strong>
+        {%if request.user.id == post.author.id%} 
+        <a class="btn btn-danger btn-sm" href="{% url 'comment_remove' pk=comment.pk %}"><i class="fa fa-trash" style="font-size:20px;"></i>&emsp;Remove It.</a>
+        {% endif %}
         <p>{{ comment.text | safe | linebreaks }}</p>
      
     </div>

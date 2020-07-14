@@ -27,17 +27,17 @@
         <span class="icon-bar"></span>
       
       </button>
-      <a class="navbar-brand" href="{% url 'post_list' %}">आपन बिहार</a>
+      <a class="navbar-brand" href="{% url 'index_page' %}">आपन बिहार</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling आपन बिहार -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     {% if user.is_authenticated %}
       <ul class="nav navbar-nav">
-         <li class="active"><a href="{% url 'post_list' %}">Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="{% url 'post_new' %}">New Blog</a></li>
-        <li><a href="{% url 'post_draft_list' %}">Draft Blog</a></li>
-        <li><a href="{% url 'post_list' %}">Blogs</a></li>    
+         <li class="active"><a href="{% url 'index_page' %}">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'post_new' %}">New Post</a></li>
+        <li><a href="{% url 'post_draft_list' %}">Draft Post</a></li>
+        <li><a href="{% url 'post_list' %}">Posts</a></li>    
           </ul>
         </li>
       </ul>

@@ -1,0 +1,235 @@
+.card {
+    box-shadow: 0 16px 48px #000000;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/*
+section {
+    background: linear-gradient(179deg, #0cb68a, #ae1445);
+    background-size: 800% 800%;
+
+    -webkit-animation: animation 11s ease infinite;
+    animation: animation 11s ease infinite;
+}
+
+@-webkit-keyframes animation {
+    0% {
+        background-position: 47% 0%
+    }
+
+    50% {
+        background-position: 54% 100%
+    }
+
+    100% {
+        background-position: 47% 0%
+    }
+}
+
+@-moz-keyframes animation {
+    0% {
+        background-position: 47% 0%
+    }
+
+    50% {
+        background-position: 54% 100%
+    }
+
+    100% {
+        background-position: 47% 0%
+    }
+}
+
+@keyframes animation {
+    0% {
+        background-position: 47% 0%
+    }
+
+    50% {
+        background-position: 54% 100%
+    }
+
+    100% {
+        background-position: 47% 0%
+    }
+}
+
+*/
+.navbar {
+    color: white;
+    padding: 10px;
+    margin-bottom: 0px;
+}
+
+.navbar-light .navbar-nav li {
+    font-size: 24px;
+}
+
+.navbar-light .navbar-nav a {
+    color: rgb(252, 248, 248);
+    font-size: 24px;
+    margin: 8px;
+
+}
+
+.navbar-light .navbar-nav a:hover {
+    color: rgb(247, 244, 244);
+    font-size: 24px;
+    margin: 8px;
+
+    background-color: rgb(12, 200, 247);
+
+}
+
+.navbar-light .navbar-nav li p {
+    color: rgb(252, 248, 248);
+    font-size: 24px;
+    margin: 14px;
+
+}
+
+.navbar .navbar-brand {
+    color: white;
+    font-size: 38px;
+    margin: 8px;
+}
+
+
+.navbar-toggler {
+    width: 47px;
+    height: 34px;
+    background-color: #7eb444;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lato', sans-serif;
+}
+
+.date {
+    color: #828282;
+}
+
+#footer {
+    font-size: 28px;
+    margin-top: 50px;
+    background-color: black;
+
+}
+
+#footer .text-center {
+
+
+    margin: 0 0 2px;
+}
+
+
+
+
+
+.jumbotron {
+    height: 500px;
+    background: url('/static/assets/gradient1.jpg') center center no-repeat;
+    background-position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+
+.jumbotron .card-title {
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+}
+
+
+
+.jumbotron p {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+
+}
+
+.jumbotron .btn {
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    background-color: #DC143C;
+
+}
+
+
+
+.countdiv {
+    margin-bottom: 10px;
+}
+
+
+
+
+.counter {
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    border-radius: 15px;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #FF4500;
+}
+
+
+.card {
+    box-shadow: 0 16px 48px #000000;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.toppost h1 {
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.toppost .card {
+
+    font-family: "Roboto", sans-serif;
+
+
+}

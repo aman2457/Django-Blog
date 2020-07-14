@@ -10,7 +10,7 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'text',)
         widgets = {
         'text': SummernoteWidget(),
-        'title': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '200px'}}),
+        'title': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '300px'}}),
     }
 
     

@@ -1,0 +1,171 @@
+{% load static %}
+<html>
+    <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Beauty Of Bihar</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">         
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5efc59673f043000126ac28f&product=inline-share-buttons" async="async"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+
+
+        <script src="{% static 'javascript/landing_page.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+    </head>
+    <body>
+    <section>
+    <nav class="navbar navbar-light" style="background-color: #000000" >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+           <span class="" role="button" ><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff;font-size:30px"></i></span>
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+      
+      </button>
+      <a class="navbar-brand" href="{% url 'index_page' %}">आपन बिहार</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling आपन बिहार -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    {% if user.is_authenticated %}
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="{% url 'index_page' %}">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'post_new' %}">New Post</a></li>
+        <li><a href="{% url 'post_draft_list' %}">Draft Post</a></li>
+        <li><a href="{% url 'post_list' %}">Posts</a></li>    
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+     <li><p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}?next=/">Log out</a>)</small></p>
+    </ul>
+     {% else %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'post_list'  %}"><span class="glyphicon glyphicon-eye-open"></span> Hello Guest</a></li>
+        <li><a href="{% url 'signup'  %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="{% url 'login'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+        </li>
+      </ul>
+      {% endif %}
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="jumbotron card card-image" style=" ">
+<br><br><br>
+  <div class="text-white text-center py-5 px-4">
+    <div>
+      <h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Create Your Cool Post <i class='fas fa-paper-plane' style='font-size:64px;color:#FF4500'></i>
+</strong></h2>
+      <p class="subtitle mx-5 mb-5"><strong>A Free & Easy Website for Bloggers,Poets,Story Writers.</strong></p>
+            <p class="subtitle mx-5 mb-5"><strong>Where You can create your own Blogs,Poem,Post.</strong></p>
+      <br>
+      <a class="btn btn-outline-white btn-md" href="#top-post"><i class="fas fa-clone left"></i> View Top Posts</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="counterdiv container">
+	
+		<div class="row text-center">
+	        <div class="countdiv col-md-3">
+	        <div class="counter">
+      <i class="fa fa-pencil-square-o fa-2x"></i>
+      <h2 class="timer count-title count-number" data-to="{{total_posts}}" data-speed="1500"></h2>
+       <p class="count-text ">Published Posts </p>
+    </div>
+	        </div>
+              <div class="countdiv col-md-3">
+               <div class="counter">
+      <i class="fa fa-users fa-2x"></i>
+      <h2 class="timer count-title count-number" data-to="{{total_users}}" data-speed="1500"></h2>
+      <p class="count-text ">Active Users</p>
+    </div>
+              </div>
+              <div class="countdiv col-md-3">
+                  <div class="counter">
+      <i class="fa fa-eye fa-2x"></i>
+      <h2 class="timer count-title count-number" data-to="{{totalviews.post_views__sum}}" data-speed="1500"></h2>
+      <p class="count-text ">Total Views</p>
+    </div></div>
+              <div class="countdiv col-md-3">
+              <div class="counter">
+      <i class="fa fa-comments fa-2x"></i>
+      <h2 class="timer count-title count-number" data-to="{{totalcomment.approved_comment__sum}}" data-speed="1500"></h2>
+      <p class="count-text ">Total Comments</p>
+    </div>
+              </div>
+         </div>
+</div>
+
+<br><br>
+
+<div class="toppost container" id="top-post">
+<h1 class="card-title1 h1-responsive pt-3 mb-5 font-bold"><strong>Top Posts <i class='fas fa-fire' style='font-size:38px;color:#FF4500'></i>
+</strong></h1>
+    <div class="row">
+<!-- Blog Entries Column -->
+        <div class="col-md-11 mt-3 left">
+         
+            {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title | safe }}</a></h2>
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.published_date}} | ({{post.post_views}} Views) </p>
+                    <p class="card-text">{{post.text| safe | slice:":350" }}</p>
+                    <p><a href="{% url 'post_detail' pk=post.pk%}" class="btn btn-primary">Read More &rarr;</a>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <a href="{% url 'post_detail' pk=post.pk %}">Likes: {{ post.likes.count }}</a>&emsp;&emsp;&emsp;&emsp;
+                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a></p>
+                                   
+                </div>
+            </div>
+            {% endfor %}
+  </div>
+
+        </div>
+    </div>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+   <footer id="footer" class="container-fluid" style="background-color:black">
+    <p class="text-center" style="color:white; margint-top : 10px;font-size:20px;"><i class="fa fa-code" style="font-size:20px;color:red"></i> with <i class="fa fa-heart" style="font-size:20px;color:red"></i>
+    by Aman <i class="fa fa-smile-o" style="font-size:21px;color:pink"></i>
+</p>
+    <p class="text-center" style="color:white; font-size:20px;">Copyright &#169; Aapan Bihar 2020</p>
+  </footer>
+  </section>
+</body>
+</html>

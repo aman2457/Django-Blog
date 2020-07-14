@@ -19,6 +19,11 @@
         margin-bottom : 15px;
         background-color: white;
     }
+
+    .content {
+    margin-left: 0px;
+    
+}
       
 </style>
 
@@ -36,7 +41,8 @@
                     <p class="card-text">{{post.text| safe | slice:":200" }}</p>
                     <p><a href="{% url 'post_detail' pk=post.pk%}" class="btn btn-primary">Read More &rarr;</a>
                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;
+                    <a href="{% url 'post_detail' pk=post.pk %}">Likes: {{ post.likes.count }}</a>&emsp;&emsp;&emsp;&emsp;
                     <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a></p>
                                    
                 </div>

@@ -40,7 +40,7 @@
                 <div class="card-body">
                   {%if user.id == post.author.id or user.is_superuser %}
         <div class="post">
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title | safe }}</a></h1>
             <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_date|date:'d-m-Y' }} </p>
 
             <p>{{ post.text| safe | truncatechars:200 }}</p>
