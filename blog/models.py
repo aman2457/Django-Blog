@@ -40,4 +40,7 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
+    def total_comments(self):
+            return self.approved_comment.count()     
+
         

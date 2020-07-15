@@ -17,10 +17,10 @@ def index_page(request):
     total_posts = Post.objects.count()
     total_users = User.objects.count()
     totalviews = Post.objects.all().aggregate(Sum('post_views'))
-    totalcomment = Comment.objects.all().aggregate(Sum('approved_comment'))
+    totallikes = Post.objects.all().aggregate(Sum('likes'))
     return render(request, 'blog/index.html',{'posts':posts,
         'total_posts':total_posts,'total_users': total_users,
-        'totalviews':totalviews,'totalcomment':totalcomment})
+        'totalviews':totalviews,'totallieks':totallikes})
 
 
 
