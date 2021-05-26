@@ -15,6 +15,9 @@
 
 This Blogging web application project is purely made with Django as the backend and Bootstrap as the frontend.
 
+## [Live Project Url](http://aapanbihar.herokuapp.com)
+
+
 ## Installation Instructions
 
 If you want to work with this project or create a version of it make sure to follow the steps below!
