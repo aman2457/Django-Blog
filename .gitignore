@@ -4,8 +4,7 @@
 __pycache__
 blogenv
 db.sqlite3
-/static
 .DS_Store
-devlopment.py
+
 .env
 demo.txt
