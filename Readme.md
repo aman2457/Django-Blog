@@ -3,14 +3,14 @@
 # Blogging Web App
 
 <p align="left">
-    <a href="https://github.com/akhil-s-kumar/django-blog-app/issues" alt="Issues">
-        <img src="https://img.shields.io/github/issues/akhil-s-kumar/django-blog-app" /></a>
-    <a href="https://github.com/akhil-s-kumar/django-blog-app/pulls" alt="Pull Requests">
-        <img src="https://img.shields.io/github/issues-pr/akhil-s-kumar/django-blog-app" /></a>
-    <a href="https://github.com/akhil-s-kumar/django-blog-app/network/members" alt="Forks">
-        <img src="https://img.shields.io/github/forks/akhil-s-kumar/django-blog-app" /></a>
-    <a href="https://github.com/akhil-s-kumar/django-blog-app/stargazers" alt="Stars">
-        <img src="https://img.shields.io/github/stars/akhil-s-kumar/django-blog-app" /></a>
+    <a href="https://github.com/aman2457/django-blog/issues" alt="Issues">
+        <img src="https://img.shields.io/github/issues/aman2457/django-blog" /></a>
+    <a href="https://github.com/aman2457/django-blog/pulls" alt="Pull Requests">
+        <img src="https://img.shields.io/github/issues-pr/aman2457/django-blog" /></a>
+    <a href="https://github.com/aman2457/django-blog/network/members" alt="Forks">
+        <img src="https://img.shields.io/github/forks/aman2457/django-blog" /></a>
+    <a href="https://github.com/aman2457/django-blog/stargazers" alt="Stars">
+        <img src="https://img.shields.io/github/stars/aman2457/django-blog" /></a>
 </p>
 
 This Blogging web application project is purely made with Django as the backend and Bootstrap as the frontend.
@@ -35,7 +35,7 @@ If you want to work with this project or create a version of it make sure to fol
 3. Clone the repository
    
     ```bash
-        (env)$ git clone https://github.com/akhil-s-kumar/django-blog-app.git
+        (env)$ git clone https://github.com/aman2457/django-blog.git
         (env)$ cd django-blog-app
     ```
 
