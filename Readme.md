@@ -100,3 +100,11 @@ Users can create blog posts from the front end and add save it as a draft for fi
 2. Clone the repository to your local machine and follow the above Installation instructions.
 3. Find an issue or feature and work on it.
 4. Make a pull request.
+
+## Screenshots 
+![blog-app-cover](Screenshots\LandingPage2.png)
+![blog-app-cover](Screenshots\PostList.png)
+![blog-app-cover](Screenshots\PostWrite.png)
+![blog-app-cover](Screenshots\PostDetails.png)
+![blog-app-cover](Screenshots\LoginPageMobileView.png)
+![blog-app-cover](Screenshots\addComment.png)
