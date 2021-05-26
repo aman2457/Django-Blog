@@ -88,7 +88,7 @@ Users can create blog posts from the front end and add save it as a draft for fi
 ## Tech Stacks
 
 * **Language:**  Python 3.x
-* **Framework:** Django 3.1.5
+* **Framework:** Django 3.0.6
 
 ## Latest Fixes
 
