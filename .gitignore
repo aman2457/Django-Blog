@@ -2,9 +2,10 @@
 *~
 /.vscode
 __pycache__
-cpspc
+blogenv
 db.sqlite3
 /static
 .DS_Store
 devlopment.py
 .env
+demo.txt

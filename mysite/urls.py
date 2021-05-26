@@ -25,7 +25,7 @@ Including another URLconf
     '''
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from blog import views
 from django.conf import settings
@@ -34,12 +34,12 @@ from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('accounts.urls')), 
+    path('accounts/', include('accounts.urls')),
     path('', include('blog.urls')),
     path('', include("django.contrib.auth.urls")),
     path('summernote/', include('django_summernote.urls')),
-    url(r'^like/$',views.like_post,name="like_post"),
-    ]
+    url(r'^like/$', views.like_post, name="like_post"),
+]
 
 
 if settings.DEBUG:

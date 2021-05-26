@@ -1,7 +1,8 @@
 from django import forms
 
-from .models import Post,Comment
-from django_summernote.widgets import SummernoteWidget
+from .models import Post, Comment
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+
 
 class PostForm(forms.ModelForm):
 
@@ -9,15 +10,13 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'text',)
         widgets = {
-        'text': SummernoteWidget(),
-        'title': SummernoteWidget(attrs={'summernote': {'width': '100%', 'height': '300px'}}),
-    }
+            'text': SummernoteWidget(),
 
-    
-        
+        }
+
 
 class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
-        fields = ('author','email','text')
+        fields = ('author', 'email', 'text')
