@@ -1,5 +1,5 @@
 
-![blog-app-cover](Screenshots\LandingPage1.png)
+![blog-app-cover](Screenshots/LandingPage1.png)
 # Blogging Web App
 
 <p align="left">
@@ -102,9 +102,9 @@ Users can create blog posts from the front end and add save it as a draft for fi
 4. Make a pull request.
 
 ## Screenshots 
-![blog-app-cover](Screenshots\LandingPage2.png)
-![blog-app-cover](Screenshots\PostList.png)
-![blog-app-cover](Screenshots\PostWrite.png)
-![blog-app-cover](Screenshots\PostDetails.png)
-![blog-app-cover](Screenshots\LoginPageMobileView.png)
-![blog-app-cover](Screenshots\addComment.png)
+![blog-app-cover](Screenshots/LandingPage2.png)
+![blog-app-cover](Screenshots/PostList.png)
+![blog-app-cover](Screenshots/PostWrite.png)
+![blog-app-cover](Screenshots/PostDetails.png)
+![blog-app-cover](Screenshots/LoginPageMobileView.png)
+![blog-app-cover](Screenshots/addComment.png)
